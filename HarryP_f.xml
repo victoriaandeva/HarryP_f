@@ -25,6 +25,7 @@
         </value>
         <statement name="DO0">
           <block type="controls_if" id="27" inline="false">
+            <mutation else="1"></mutation>
             <value name="IF0">
               <block type="logic_compare" id="546" inline="true">
                 <field name="OP">LT</field>
@@ -41,60 +42,24 @@
               </block>
             </value>
             <statement name="DO0">
-              <block type="oled_setcursor" id="116" inline="true">
-                <value name="STARTX">
-                  <block type="math_number" id="502">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-                <value name="STARTY">
-                  <block type="math_number" id="503">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
+              <block type="movement_right" id="458">
                 <next>
-                  <block type="led_select" id="172" inline="true">
+                  <block type="led_select" id="596" inline="true">
                     <field name="ACTION">ON</field>
                     <value name="LED">
-                      <block type="math_number" id="377">
+                      <block type="math_number" id="504">
                         <field name="NUM">0</field>
                       </block>
                     </value>
                     <next>
-                      <block type="movement_left" id="448">
-                        <next>
-                          <block type="robot_delay" id="576" inline="true">
-                            <value name="DELAY">
-                              <block type="math_number" id="578">
-                                <field name="NUM">1000</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="movement_right" id="458">
-                                <next>
-                                  <block type="robot_delay" id="577" inline="true">
-                                    <value name="DELAY">
-                                      <block type="math_number" id="579">
-                                        <field name="NUM">1000</field>
-                                      </block>
-                                    </value>
-                                    <next>
-                                      <block type="oled_drawnumber" id="212" inline="true">
-                                        <value name="NUMBER">
-                                          <block type="math_number" id="504">
-                                            <field name="NUM">0</field>
-                                          </block>
-                                        </value>
-                                        <next>
-                                          <block type="oled_cleardisplay" id="148"></block>
-                                        </next>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
+                      <block type="robot_delay" id="577" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="579">
+                            <field name="NUM">1000</field>
                           </block>
+                        </value>
+                        <next>
+                          <block type="movement_stop" id="580"></block>
                         </next>
                       </block>
                     </next>
@@ -102,7 +67,7 @@
                 </next>
               </block>
             </statement>
-            <next>
+            <statement name="ELSE">
               <block type="movement_forward" id="7">
                 <next>
                   <block type="robot_delay" id="8" inline="true">
@@ -117,7 +82,7 @@
                   </block>
                 </next>
               </block>
-            </next>
+            </statement>
           </block>
         </statement>
         <next>
