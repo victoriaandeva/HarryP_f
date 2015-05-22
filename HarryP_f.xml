@@ -1,69 +1,122 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="9" inline="false" x="170" y="76">
+  <block type="controls_whileUntil" id="1" inline="false" x="170" y="76">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
-      <block type="sensor_button" id="24">
+      <block type="sensor_button" id="2">
         <field name="OBJECT">ENTER</field>
       </block>
     </value>
     <statement name="DO">
-      <block type="controls_if" id="456" inline="false">
+      <block type="controls_if" id="3" inline="false">
         <value name="IF0">
-          <block type="logic_compare" id="463" inline="true">
+          <block type="logic_compare" id="4" inline="true">
             <field name="OP">GT</field>
             <value name="A">
-              <block type="sensor_spectrometer" id="470">
+              <block type="sensor_spectrometer" id="5">
                 <field name="LIGHT">BLUE</field>
               </block>
             </value>
             <value name="B">
-              <block type="math_number" id="477">
+              <block type="math_number" id="6">
                 <field name="NUM">80</field>
               </block>
             </value>
           </block>
         </value>
         <statement name="DO0">
-          <block type="movement_forward" id="43">
-            <next>
-              <block type="robot_delay" id="62" inline="true">
-                <value name="DELAY">
-                  <block type="math_number" id="166">
-                    <field name="NUM">100</field>
+          <block type="controls_if" id="27" inline="false">
+            <value name="IF0">
+              <block type="sensor_object" id="44">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="oled_setcursor" id="116" inline="true">
+                <value name="STARTX">
+                  <block type="math_number" id="502">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="STARTY">
+                  <block type="math_number" id="503">
+                    <field name="NUM">0</field>
                   </block>
                 </value>
                 <next>
-                  <block type="movement_stop" id="447"></block>
+                  <block type="movement_right" id="458">
+                    <next>
+                      <block type="led_select" id="172" inline="true">
+                        <field name="ACTION">ON</field>
+                        <value name="LED">
+                          <block type="math_number" id="377">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_drawnumber" id="212" inline="true">
+                            <value name="NUMBER">
+                              <block type="math_number" id="504">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="movement_left" id="448">
+                                <next>
+                                  <block type="oled_cleardisplay" id="148"></block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="movement_forward" id="7">
+                <next>
+                  <block type="robot_delay" id="8" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="9">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="movement_stop" id="10"></block>
+                    </next>
+                  </block>
                 </next>
               </block>
             </next>
           </block>
         </statement>
         <next>
-          <block type="oled_cleardisplay" id="33">
+          <block type="oled_cleardisplay" id="11">
             <next>
-              <block type="oled_setcursor" id="235" inline="true">
+              <block type="oled_setcursor" id="12" inline="true">
                 <value name="STARTX">
-                  <block type="math_number" id="416">
+                  <block type="math_number" id="13">
                     <field name="NUM">0</field>
                   </block>
                 </value>
                 <value name="STARTY">
-                  <block type="math_number" id="423">
+                  <block type="math_number" id="14">
                     <field name="NUM">0</field>
                   </block>
                 </value>
                 <next>
-                  <block type="oled_drawnumber" id="438" inline="true">
+                  <block type="oled_drawnumber" id="15" inline="true">
                     <value name="NUMBER">
-                      <block type="sensor_spectrometer" id="140">
+                      <block type="sensor_spectrometer" id="16">
                         <field name="LIGHT">BLUE</field>
                       </block>
                     </value>
                     <next>
-                      <block type="robot_delay" id="448" inline="true">
+                      <block type="robot_delay" id="17" inline="true">
                         <value name="DELAY">
-                          <block type="math_number" id="449">
+                          <block type="math_number" id="18">
                             <field name="NUM">100</field>
                           </block>
                         </value>
@@ -78,7 +131,7 @@
       </block>
     </statement>
     <next>
-      <block type="movement_stop" id="159"></block>
+      <block type="movement_stop" id="19"></block>
     </next>
   </block>
 </xml>
