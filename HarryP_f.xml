@@ -25,7 +25,7 @@
         </value>
         <statement name="DO0">
           <block type="controls_if" id="27" inline="false">
-            <mutation else="1"></mutation>
+            <mutation elseif="1" else="1"></mutation>
             <value name="IF0">
               <block type="logic_compare" id="546" inline="true">
                 <field name="OP">LT</field>
@@ -60,6 +60,47 @@
                         </value>
                         <next>
                           <block type="movement_stop" id="580"></block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="640" inline="true">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="sensor_object" id="641">
+                    <field name="OBJECT">LEFTFRONT</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="642">
+                    <field name="NUM">80</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="movement_left" id="607">
+                <next>
+                  <block type="led_select" id="643" inline="true">
+                    <field name="ACTION">ON</field>
+                    <value name="LED">
+                      <block type="math_number" id="644">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="robot_delay" id="645" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="646">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="movement_stop" id="647"></block>
                         </next>
                       </block>
                     </next>
